@@ -1,0 +1,11 @@
+
+
+POST http://localhost:3000/api/user
+
+Content-Type: application/json
+
+{
+    "fullName": "ILKISIM",
+    "email": "MAIL@MAIL",
+    "password": "123121231231233"
+}
