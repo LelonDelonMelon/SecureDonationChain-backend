@@ -10,10 +10,10 @@ config();
 
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.static(public));
+app.use(express.static('public'));
 
 app.get('/form',(req,res) =>{
-    res.sendFile(__dirname + '/public/index.html')
+    res.sendFile(__dirname + 'src/public/index.html')
 });
 
 app.post('/formPost',(req,res) =>{
