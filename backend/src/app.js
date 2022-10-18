@@ -8,17 +8,20 @@ const port = process.env.PORT || 8080;
 //set all config files
 config();
 
+
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.static('public'));
 
 app.get('/form',(req,res) =>{
-    res.sendFile(__dirname + 'src/public/index.html')
+    res.sendFile(__dirname + 'public/index1.html')
 });
 
 app.post('/formPost',(req,res) =>{
     console.log(req.body);
 })
+
+
 
 //app.use(express.json())
 app.use(bodyParser.urlencoded({
