@@ -12,9 +12,8 @@ class User{
     }
 
     async create(req, res) {
-      
+        console.log("req.body is : ",req.body);
         const user = await userService.create(req.body); //gelen requeste göre user yarat
-
         return res.json(user);
     }
 }
