@@ -3,6 +3,7 @@ const router = express.Router();
 const userRouter = require('./user');
 const campaignRouter = require('./campaign');
 const { application } = require('express');
+const userController = require('../controller/user');
 
 
 router.get('/', function(req, res) {

@@ -18,11 +18,11 @@ class BaseService {
     }
     async update(id, data)
     {
-        return await this.mode?.findByIdAnyUpdate(id,data)
+        return await this.model?.findByIdAndUpdate(id,data)
     }
     async delete(id)
     {
-        return await this.model?.findByIDAndDelete(id)
+        return await this.model?.findByIdAndDelete(id)
     }
 }
 module.exports = BaseService;
