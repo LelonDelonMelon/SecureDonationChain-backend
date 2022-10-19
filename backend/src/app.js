@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const Web3 = require('web3');
 const MongoClient = require('mongodb').MongoClient;
 const apiRouter = require('./routes')
 const config = require('./config');
@@ -7,6 +8,7 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 const mongoose = require("mongoose");
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "js")));
 app.use(express.urlencoded());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
@@ -27,9 +29,15 @@ const Wallets= mongoose.model("Wallets", walletsSchema);
 
 
 
-app.get('/form',(req,res) =>{
+app.get('/',(req,res) =>{
     res.sendFile(__dirname + '../public/index.html')
 });
+
+app.get('/wallet',(req,res) =>{
+    res.sendFile(__dirname + '/walletcnct.html')
+});
+
+
 
 
 app.post('/formPost',(req,res) =>{
@@ -43,6 +51,8 @@ app.post("/", function(req,res){
     newWallet.save();
     res.redirect("/");
 })
+
+
 
 
 
