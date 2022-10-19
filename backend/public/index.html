@@ -10,9 +10,12 @@
 </body>
       <H1 class="heading">Register With Your Wallet</H1>
 
-      <form action="backend/src/app.js" class="form" method="post">
-            <input type="text" name="Your Wallet Address"
+      <form action="/" class="container" method="post">
+         <div class="form-group">
+            <input class="form-control" name="wallet" type="text" name="Your Wallet Address"
             placeholder="WalletAddress" required>
-            <button type="submit" class="btn">Submit</button>
+            <button id="myButton" type="submit" class="btn" onclick="alert('Wallet Registered!');">Submit</button>
+          </div>  
       </form>
+      
 </html>
