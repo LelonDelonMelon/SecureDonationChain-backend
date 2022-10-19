@@ -10,7 +10,9 @@ config();
 
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({
+    extended : true
+}));
 app.use(express.static('public'));
 
 app.get('/form',(req,res) =>{
@@ -23,12 +25,14 @@ app.post('/formPost',(req,res) =>{
 
 
 
-//app.use(express.json())
 app.use(bodyParser.urlencoded({
     extended : true
 }))
 app.use('/api',apiRouter);
 
-app.listen(port,() =>{
-    console.log('Server Started at http://localhost:8080')
+app.listen(process.env.APP_PORT,()=> {
+    console.log("Listening at port", process.env.APP_PORT);
 });
+// app.listen(port,() =>{
+//     console.log('Server Started at http://localhost:8080')
+// });

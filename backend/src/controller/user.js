@@ -26,6 +26,7 @@ class User{
     }
     async delete (req,res) {
         const user = await userService.delete(req.params.id);
+        console.log("deleted user");
         res.json(user);
     }
 }
