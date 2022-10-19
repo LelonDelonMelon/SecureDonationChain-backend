@@ -1,8 +1,15 @@
 const router = require('express').Router();
+const campaignController = require('../controller/campaign');
 
 
-router.get('/', (req,res) => {
-    res.send("test Campaign");
-})
+// router.get('/', function(req, res) {
+//     res.send('respond with a resource');
+//   });
+
+
+router.get('/', campaignController.list)
+router.post('/', campaignController.create)
+router.put('/:id', campaignController.update);
+router.delete('/:id', campaignController.delete);
 
 module.exports = router

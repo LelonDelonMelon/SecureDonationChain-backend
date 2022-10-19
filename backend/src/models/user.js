@@ -2,7 +2,7 @@
 const mongo = require('mongoose')
 //database e entry ekleme timestample beraber
 
-const userScheme = new mongo.Schema({
+const userSchema = new mongo.Schema({
     fullName: {
         type: String
     },
@@ -15,4 +15,4 @@ const userScheme = new mongo.Schema({
     }
 },{timeStamps:true});
 
-module.exports = mongo.model('User', userScheme);
+module.exports = mongo.model('User', userSchema);

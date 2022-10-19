@@ -1,7 +1,6 @@
 //AUTHENTICATION... etc
 
 const userService = require('../services/user');
-const user = require('../models/user');
 
 
 

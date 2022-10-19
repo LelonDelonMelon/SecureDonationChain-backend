@@ -33,6 +33,3 @@ app.use('/api',apiRouter);
 app.listen(process.env.APP_PORT,()=> {
     console.log("Listening at port", process.env.APP_PORT);
 });
-// app.listen(port,() =>{
-//     console.log('Server Started at http://localhost:8080')
-// });
