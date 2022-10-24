@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 const mongoose = require("mongoose");
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "js")));
+
 app.use(express.urlencoded());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
@@ -25,8 +25,13 @@ mongoose.connect("mongodb+srv://egetelli:12345@cluster0.2w26ofd.mongodb.net/user
 const walletsSchema = {
     wallet: String
 }
-const Wallets= mongoose.model("Wallets", walletsSchema);
 
+const wallets1Scheme = {
+    walletss: String
+}
+
+const Wallets = mongoose.model("Wallets", walletsSchema);
+const Wallets1= mongoose.model("Wallets1", wallets1Scheme);
 
 
 app.get('/',(req,res) =>{
@@ -49,6 +54,14 @@ app.post("/", function(req,res){
         wallet: req.body.wallet
     });
     newWallet.save();
+    res.redirect("/");
+})
+
+app.post("/wallet", function(req,res){
+    let newWallet1 = new Wallets1({
+        walletss: req.body.accounts
+    });
+    newWallet1.save();
     res.redirect("/");
 })
 
