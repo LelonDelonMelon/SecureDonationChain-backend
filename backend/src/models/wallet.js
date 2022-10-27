@@ -4,6 +4,6 @@ const mongo = require('mongoose')
 
 const walletSchema = new mongo.Schema({
     walletAddress : String
-},{timeStamps:true});
+},{timestamps:true});
 
 module.exports = mongo.model('Wallet', walletSchema);

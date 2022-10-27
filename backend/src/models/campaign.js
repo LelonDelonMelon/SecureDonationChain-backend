@@ -18,5 +18,5 @@ const campaignSchema = new mongo.Schema({
     //     contentType: String
     // }
 
-}, {timeStamps: true})
+}, {timestamps: true})
 module.exports = new mongo.model('Campaign', campaignSchema);

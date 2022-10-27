@@ -13,6 +13,6 @@ const userSchema = new mongo.Schema({
     password: {
         type: String
     }
-},{timeStamps:true});
+},{timestamps:true});
 
 module.exports = mongo.model('User', userSchema);
