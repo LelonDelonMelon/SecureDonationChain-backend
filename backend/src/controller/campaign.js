@@ -10,10 +10,12 @@ class CampaignService{
         return res.json(campaigns);
     }
 
-    async create(req, res) {
+    async create(req, res, err) {
         //console.log("req.body is : ",req.body);
         const campaign = await campaignService.create(req.body); //gelen requeste göre user yarat
         console.log("Creating campaign", campaign);
+        if(!err)
+            return res.json(campaign);
         return res.json(campaign);
     }
     async update(req ,res) {

@@ -1,8 +1,39 @@
 
 
-POST http://localhost:3000/api/user
+get http://localhost:3000/api/user
+
+###
+
+post http://localhost:3000/api/user
+Content-Type: application/json
+
 {
-    fullName: "ILKISIM",
-    email: "MAIL@MAIL",
-    password: "123121231231233"
+    "fullName": "From RestClient",
+    "email":"ASSSaSDASDASDASDASD",
+    "password": "aSDKMkas_jasdbG'31"
+}
+
+###
+
+post http://localhost:3000/api/wallet
+Content-Type: application/json
+
+{
+    "walletAddress": "FromRestClient_1"
+}
+
+###
+
+get http://localhost:3000/api/campaign
+
+###
+
+post http://localhost:3000/api/campaign
+Content-Type: application/json
+
+{
+    "campaignName": "FromRestClient_2",
+    "ownerAddress": "asdASDASD",
+    "campaignDescription": "TESDESC",
+    "campaignGoalAmount":" 123142"
 }

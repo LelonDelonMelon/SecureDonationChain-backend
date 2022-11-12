@@ -3,7 +3,10 @@ const mongo = require('mongoose')
 //database e entry ekleme timestample beraber
 
 const walletSchema = new mongo.Schema({
-    walletAddress : String
+    walletAddress: {
+        type: String,
+        unique: true
+    }
 },{timestamps:true});
 
 module.exports = mongo.model('Wallet', walletSchema);
