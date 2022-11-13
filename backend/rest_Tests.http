@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
     "fullName": "From RestClient",
-    "email":"ASSSaSDASDASDASDASD",
+    "email":"asdasdasaqweqwe",
     "password": "aSDKMkas_jasdbG'31"
 }
 
@@ -22,6 +22,9 @@ Content-Type: application/json
     "walletAddress": "FromRestClient_1"
 }
 
+###
+
+get http://localhost:3000/api/wallet
 ###
 
 get http://localhost:3000/api/campaign
@@ -37,3 +40,7 @@ Content-Type: application/json
     "campaignDescription": "TESDESC",
     "campaignGoalAmount":" 123142"
 }
+###
+
+delete http://localhost:3000/api/campaign/634fb2991e17bbe4e06d0513
+Content-Type: application/json

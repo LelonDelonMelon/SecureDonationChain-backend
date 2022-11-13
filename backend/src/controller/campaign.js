@@ -1,7 +1,7 @@
 //AUTHENTICATION... etc
 
 const campaignService = require('../services/campaign');
-
+const errorController = require('../controller/errorController');
 
 
 class CampaignService{

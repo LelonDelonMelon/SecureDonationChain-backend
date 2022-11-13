@@ -5,7 +5,8 @@ const mongo = require('mongoose')
 const walletSchema = new mongo.Schema({
     walletAddress: {
         type: String,
-        unique: true
+        unique: true,
+        require: [true, 'Wallet Address can not be empty']
     }
 },{timestamps:true});
 

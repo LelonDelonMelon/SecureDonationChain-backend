@@ -3,6 +3,7 @@ const app = express();
 const apiRouter = require('./routes')
 const config = require('./config');
 const bodyParser = require('body-parser');
+const errorController = require('./controller/errorController');
 const port = process.env.PORT || 8080;
 
 //set all config files
@@ -22,7 +23,7 @@ app.get('/form',(req,res) =>{
 app.post('/formPost',(req,res) =>{
     console.log(req.body);
 })
-
+app.use(errorController)
 
 
 app.use(bodyParser.urlencoded({
