@@ -35,9 +35,9 @@ post http://localhost:3000/api/campaign
 Content-Type: application/json
 
 {
-    "campaignName": "FromRestClient_2",
-    "ownerAddress": "asdASDASD",
-    "campaignDescription": "TESDESC",
+    "campaignName": "Example Campaign",
+    "ownerAddress": "0x123812737126736",
+    "campaignDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat .",
     "campaignGoalAmount":" 123142"
 }
 ###
