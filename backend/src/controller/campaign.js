@@ -4,7 +4,7 @@ const campaignService = require('../services/campaign');
 const errorController = require('../controller/errorController');
 
 
-class CampaignService{
+class CampaignService {
     async list(req, res) {
         const campaigns = await campaignService.list();
         return res.json(campaigns);
@@ -12,18 +12,26 @@ class CampaignService{
 
     async create(req, res) {
         //console.log("req.body is : ",req.body);
+        const filter = req.body
+        if(await campaignService.findOne(filter))
+        {
+            
+            return errorController(req,res,"Campaign already exists")
+        }
+
         const campaign = await campaignService.create(req.body); //gelen requeste göre user yarat
         console.log("Creating campaign", campaign);
         return res.json(campaign);
+
     }
-    async update(req ,res) {
-        
-        console.log("Updating campaign with following: ",req.body)
+    async update(req, res) {
+
+        console.log("Updating campaign with following: ", req.body)
         const campaign = await campaignService.update(req.params.id, req.body);
         console.log("updated campaign");
         return res.json(campaign);
     }
-    async delete (req,res) {
+    async delete(req, res) {
         console.log("deleting campaign with id", req.params.id);
         const campaign = await campaignService.delete(req.params.id);
         console.log("deleted campaign");

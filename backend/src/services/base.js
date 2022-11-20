@@ -24,5 +24,8 @@ class BaseService {
     {
         return await this.model?.findByIdAndDelete(id)
     }
+    async findOne(data){
+        return await this.model?.findOne(data);
+    }
 }
 module.exports = BaseService;
