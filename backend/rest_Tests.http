@@ -8,9 +8,9 @@ post http://localhost:3000/api/user
 Content-Type: application/json
 
 {
-    "fullName": "From RestClient",
+    "fullName": "Merhaba11111",
     "email":"asdasdasaqweqwe",
-    "password": "aSDKMkas_jasdbG'31"
+    "password": "gdgdgddgdfgdd'31"
 }
 
 ###
@@ -19,12 +19,14 @@ post http://localhost:3000/api/wallet
 Content-Type: application/json
 
 {
-    "walletAddress": "FromRestClient_1"
+    "walletAddress": "FromRestClient_1",
+    "owner": "hgfjhgdgfdg"
 }
 
 ###
 
 get http://localhost:3000/api/wallet
+
 ###
 
 get http://localhost:3000/api/campaign

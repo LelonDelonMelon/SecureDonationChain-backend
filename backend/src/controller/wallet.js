@@ -10,14 +10,13 @@ class Wallet{
         return res.json(wallets);
     }
 
-    async create(req, res, err) {
+    async create(req, res) {
         //console.log("req.body is : ",req.body);
-        
-        const wallet = await walletService.create(req.body); //gelen requeste göre user yarat
-        if(!err)
-            return res.json(wallet);
 
-        return res.json(err);
+        const wallet = await walletService.create(req.body); //gelen requeste göre user yarat
+        return res.json(wallet)
+    
+
     }
     async update(req ,res) {
         

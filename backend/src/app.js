@@ -16,6 +16,18 @@ app.use(express.urlencoded({
 }));
 app.use(express.static('public'));
 
+
+app.use(bodyParser.urlencoded({
+    extended : true
+}))
+app.use('/api',apiRouter);
+
+app.use((err,res,next) => {
+    next()
+})
+
+
+
 app.get('/form',(req,res) =>{
     res.sendFile(__dirname + 'public/index1.html')
 });
@@ -26,10 +38,6 @@ app.post('/formPost',(req,res) =>{
 app.use(errorController)
 
 
-app.use(bodyParser.urlencoded({
-    extended : true
-}))
-app.use('/api',apiRouter);
 
 app.listen(process.env.APP_PORT,()=> {
     console.log("Listening at port", process.env.APP_PORT);
