@@ -18,7 +18,12 @@ class CampaignService {
             
             return errorController(req,res,"Campaign already exists")
         }
-
+        //check campaigndescription length
+        if(req.body.campaignDescription.length>= 255)
+        {
+            return errorController(req,res,"Campaign description is too long")
+        }
+        
         const campaign = await campaignService.create(req.body); //gelen requeste göre user yarat
         console.log("Creating campaign", campaign);
         return res.json(campaign);

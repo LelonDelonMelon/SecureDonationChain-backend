@@ -1,11 +1,12 @@
 //AUTHENTICATION... etc
 
 const walletService = require('../services/wallet');
-
+const errorController = require('../controller/errorController');
 
 
 class Wallet{
     async list(req, res) {
+   
         const wallets = await walletService.list();
         return res.json(wallets);
     }
@@ -13,6 +14,12 @@ class Wallet{
     async create(req, res) {
         //console.log("req.body is : ",req.body);
 
+        const filter = req.body;
+        if(filter.walletAddress === "")
+        {
+            return errorController(req,res,"Wallet address can not be empty")
+        }
+        
         const wallet = await walletService.create(req.body); //gelen requeste göre user yarat
         return res.json(wallet)
     

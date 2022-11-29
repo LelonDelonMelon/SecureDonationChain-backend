@@ -11,5 +11,18 @@ module.exports = (req, res, errIdentifier) => {
     {
         res.status(500).send('Wallet Already Exists')
     }
+    if(errIdentifier ==='Campaign description is too long')
+    {
+        res.status(500).send('Campaign Description is Too Long')
+    }
+    if(errIdentifier ==='Password cannot be empty')
+    {
+        res.status(500).send("Password Field Can't be Empty");
+    }
+    
+    if(errIdentifier ==='Wallet address can not be empty')
+    {
+        res.status(500).send("Wallet Address can't be empty");
+    }
     //res.status(500).send('Error Occured');
 }

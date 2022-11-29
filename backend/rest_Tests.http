@@ -8,18 +8,19 @@ post http://localhost:3000/api/user
 Content-Type: application/json
 
 {
-    "fullName": "Merhaba11111",
-    "email":"skdmkasdmalskdmalsdkqwe",
-    "password": "gdgdgddgdfgdd'31"
+    "fullName": "MERHABA MERT",
+    "email":"EBE",
+    "password": "askdkasdjj123h12h3hbasdv"
 }
 
 ###
-
+delete http://localhost:3000/api/user/634e50c261fc4e0f2619df16
+###
 post http://localhost:3000/api/wallet
 Content-Type: application/json
 
 {
-    "walletAddress": "FromRestClient_2",
+    "walletAddress": "0x1231481231782378",
     "owner": "hgfjhgdgfdg"
 }
 
@@ -37,9 +38,9 @@ post http://localhost:3000/api/campaign
 Content-Type: application/json
 
 {
-    "campaignName": "Example Campaign",
-    "ownerAddress": "0x123812737126736",
-    "campaignDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat .",
+    "campaignName": "Example Campaigng",
+    "ownerAddress": "0x12381273712673gfdd6",
+    "campaignDescription": "Lorem ipsum dolor sit amet, consect, arcu dui molli tincidunt mauris eratLorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat ",
     "campaignGoalAmount":" 123142"
 }
 ###
