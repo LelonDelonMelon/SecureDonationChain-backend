@@ -5,7 +5,7 @@ const config = require('./config');
 const bodyParser = require('body-parser');
 const errorController = require('./controller/errorController');
 const port = process.env.PORT || 8080;
-
+const cors = require('cors');
 //set all config files
 config();
 
@@ -14,8 +14,9 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended : true
 }));
-app.use(express.static('public'));
 
+app.use(express.static('public'));
+app.use(cors())
 
 app.use(bodyParser.urlencoded({
     extended : true

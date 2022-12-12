@@ -24,5 +24,12 @@ module.exports = (req, res, errIdentifier) => {
     {
         res.status(500).send("Wallet Address can't be empty");
     }
+    if(errIdentifier ==='Comment already exists'){
+        res.status(500).send("Comment Already Exists");
+    }
+    if(errIdentifier ==='Comment is too long'){
+        res.status(500).send('Comment is Too Long')
+    }
+    
     //res.status(500).send('Error Occured');
 }
