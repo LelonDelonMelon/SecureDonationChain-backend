@@ -3,6 +3,8 @@ const errorController = require('../controller/errorController');
 
 class Comment{
     async list(req, res) {
+
+        console.log(req.query);
         const comments = await commentService.list();
         return res.json(comments);
     }

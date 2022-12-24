@@ -2,7 +2,7 @@ const mongo = require('mongoose');
 
 const commentSchema = new mongo.Schema({
 
-    author:{
+    authorID:{
         type: String
     },
 
@@ -15,7 +15,7 @@ const commentSchema = new mongo.Schema({
         min:0,
         max:5
     },
-    attachedPost: {
+    campaignID: {
         type:String
     },
     content: {

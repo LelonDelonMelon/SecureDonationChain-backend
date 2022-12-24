@@ -2,6 +2,7 @@
 
 const campaignService = require('../services/campaign');
 const errorController = require('../controller/errorController');
+const multer = require('multer')
 
 
 class CampaignService {
@@ -13,17 +14,25 @@ class CampaignService {
     async create(req, res) {
         //console.log("req.body is : ",req.body);
         const filter = req.body
-        if(await campaignService.findOne(filter))
-        {
-            
-            return errorController(req,res,"Campaign already exists")
+        if (await campaignService.findOne(filter)) {
+
+            return errorController(req, res, "Campaign already exists")
         }
         //check campaigndescription length
-        if(req.body.campaignDescription.length>= 255)
-        {
-            return errorController(req,res,"Campaign description is too long")
+        if (req.body.campaignDescription.length >= 255) {
+            return errorController(req, res, "Campaign description is too long")
         }
+        const storage = multer.diskStorage({
+            destination: (req, file, callBack) => {
+                callBack(null, 'uploads')
+            },
+            filename: (req, file, callBack) => {
+                callBack(null, `${file.originalname}`)
+            }
+        })
+        let upload = multer({dest:'uploads/'})
         
+
         const campaign = await campaignService.create(req.body); //gelen requeste göre user yarat
         console.log("Creating campaign", campaign);
         return res.json(campaign);

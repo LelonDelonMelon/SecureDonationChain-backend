@@ -1,6 +1,6 @@
 
 
-get http://localhost:3000/api/user
+get http://localhost:3000/api/user?email=egetelli@hotmail.com
 
 ###
 
@@ -11,6 +11,20 @@ Content-Type: application/json
     "fullName": "MERHABA MERT",
     "email":"EBE",
     "password": "askdkasdjj123h12h3hbasdv"
+}
+###
+get http://localhost:3000/api/comment?content=Test
+Accept: application/json
+###
+
+post http://localhost:3000/api/comment
+Content-Type: application/json
+
+{
+    "authorID": "636fdd325aa57342aa327811",
+    "rating": 1,
+    "campaignID":"63700387235cf5e50818fb90",
+    "content": "Test Content"
 }
 
 ###
