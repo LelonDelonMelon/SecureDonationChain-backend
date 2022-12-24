@@ -7,7 +7,7 @@ const multer = require('multer')
 
 class CampaignService {
     async list(req, res) {
-        const campaigns = await campaignService.list();
+        const campaigns = await campaignService.list(req.query);
         return res.json(campaigns);
     }
 

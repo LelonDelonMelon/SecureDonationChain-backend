@@ -5,7 +5,7 @@ class Comment{
     async list(req, res) {
 
         console.log(req.query);
-        const comments = await commentService.list();
+        const comments = await commentService.list(req.query);
         return res.json(comments);
     }
     async create(req,res){

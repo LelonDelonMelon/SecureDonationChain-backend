@@ -1,6 +1,7 @@
 
 
-get http://localhost:3000/api/user?email=egetelli@hotmail.com
+get http://localhost:3000/api/user?password=12345
+
 
 ###
 
@@ -61,3 +62,19 @@ Content-Type: application/json
 
 delete http://localhost:3000/api/campaign/634fb2991e17bbe4e06d0513
 Content-Type: application/json
+
+### working login
+post http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "email": "egetelli@hotmail.com",
+    "password": "12345"
+}
+### working logout
+post http://localhost:3000/api/login/logout
+Content-Type: application/json
+
+{
+    "id": "635126812d1b17db85b1117d"
+}

@@ -10,6 +10,7 @@ class BaseService {
     
     async list (where)
     {
+        //console.log("Where is", where)
         return await this.model?.find(where || {}) //if where is specified get specified users, otherwise get all of them
     }
     async create(data)

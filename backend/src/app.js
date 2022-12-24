@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const app = express();
 const apiRouter = require('./routes')
 const config = require('./config');
@@ -21,7 +22,14 @@ app.use(cors())
 app.use(bodyParser.urlencoded({
     extended : true
 }))
+
+app.use(session({
+    secret:'secret',
+    resave: true,
+    saveUninitialized: true
+}))
 app.use('/api',apiRouter);
+
 
 app.use((err,res,next) => {
     next()

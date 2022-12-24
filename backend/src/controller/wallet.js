@@ -7,7 +7,7 @@ const errorController = require('../controller/errorController');
 class Wallet{
     async list(req, res) {
    
-        const wallets = await walletService.list();
+        const wallets = await walletService.list(req.query);
         return res.json(wallets);
     }
 
