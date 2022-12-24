@@ -19,7 +19,11 @@ class Login {
         }
     }
 
-    async isLoggedIn(req, res) { }
+    async isLoggedIn(req, res) { 
+        const user = await userService.findOne(req.body,res);
+        console.log(user);
+        return res.json(user.isLoggedIn)
+    }
 
 
     async logOut(req, res) {

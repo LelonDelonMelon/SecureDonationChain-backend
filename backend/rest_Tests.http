@@ -78,3 +78,12 @@ Content-Type: application/json
 {
     "id": "635126812d1b17db85b1117d"
 }
+###
+post http://localhost:3000/api/login/isLoggedIn
+Content-Type: application/json
+
+{
+    "id": "635126812d1b17db85b1117d",
+    "email": "egetelli@hotmail.com",
+    "password": "12345"
+}
