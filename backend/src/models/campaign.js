@@ -12,11 +12,11 @@ const campaignSchema = new mongo.Schema({
     },
     campaignGoalAmount: {
         type: String
+    },
+    campaignPicture: {
+        data: Buffer,
+        contentType: String
     }
-    // campaignPicture: {
-    //     data: Buffer,
-    //     contentType: String
-    // }
 
-}, {timestamps: true})
+}, { timestamps: true })
 module.exports = new mongo.model('Campaign', campaignSchema);

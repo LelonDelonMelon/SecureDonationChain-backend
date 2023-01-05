@@ -3,7 +3,9 @@ const errorController = require('../controller/errorController');
 
 class Comment{
     async list(req, res) {
-        const comments = await commentService.list();
+
+        console.log(req.query);
+        const comments = await commentService.list(req.query);
         return res.json(comments);
     }
     async create(req,res){

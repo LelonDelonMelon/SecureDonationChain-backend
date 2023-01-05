@@ -1,6 +1,7 @@
 
 
-get http://localhost:3000/api/user
+get http://localhost:3000/api/user?password=12345
+
 
 ###
 
@@ -11,6 +12,20 @@ Content-Type: application/json
     "fullName": "MERHABA MERT",
     "email":"EBE",
     "password": "askdkasdjj123h12h3hbasdv"
+}
+###
+get http://localhost:3000/api/comment?content=Test
+Accept: application/json
+###
+
+post http://localhost:3000/api/comment
+Content-Type: application/json
+
+{
+    "authorID": "636fdd325aa57342aa327811",
+    "rating": 1,
+    "campaignID":"63700387235cf5e50818fb90",
+    "content": "Test Content"
 }
 
 ###
@@ -47,3 +62,28 @@ Content-Type: application/json
 
 delete http://localhost:3000/api/campaign/634fb2991e17bbe4e06d0513
 Content-Type: application/json
+
+### working login
+post http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "email": "egetelli@hotmail.com",
+    "password": "12345"
+}
+### working logout
+post http://localhost:3000/api/login/logout
+Content-Type: application/json
+
+{
+    "id": "635126812d1b17db85b1117d"
+}
+###
+post http://localhost:3000/api/login/isLoggedIn
+Content-Type: application/json
+
+{
+    "id": "635126812d1b17db85b1117d",
+    "email": "egetelli@hotmail.com",
+    "password": "12345"
+}

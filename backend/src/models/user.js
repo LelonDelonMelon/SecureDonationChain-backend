@@ -12,6 +12,10 @@ const userSchema = new mongo.Schema({
     },
     password: {
         type: String
+    },
+    isLoggedIn:{
+        type: Boolean,
+        default: false
     }
 },{timestamps:true});
 
