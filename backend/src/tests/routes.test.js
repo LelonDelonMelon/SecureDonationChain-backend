@@ -23,6 +23,7 @@ describe('Users endpoint', ()=> {
         //const res = await request("http:127.0.0.1:3000").get("/api/user")
         //console.log(res)
         expect(res.status).toEqual(200)
+        //expect(res.body).toEqual([])
         
     })
 })
