@@ -37,14 +37,9 @@ app.use((err,res,next) => {
 
 
 
-app.get('/form',(req,res) =>{
-    res.sendFile(__dirname + 'public/index1.html')
-});
 
-app.post('/formPost',(req,res) =>{
-    console.log(req.body);
-})
 app.use(errorController)
+
 
 
 

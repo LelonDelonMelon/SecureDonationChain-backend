@@ -14,7 +14,7 @@ const campaignSchema = new mongo.Schema({
         type: String
     },
     campaignPicture: {
-        data: Buffer,
+        
         contentType: String
     }
 

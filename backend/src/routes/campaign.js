@@ -11,5 +11,5 @@ router.get('/', campaignController.list)
 router.post('/', campaignController.create)
 router.put('/:id', campaignController.update);
 router.delete('/:id', campaignController.delete);
-
+router.get('/images',campaignController.getImages);
 module.exports = router

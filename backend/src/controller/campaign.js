@@ -22,15 +22,7 @@ class CampaignService {
         if (req.body.campaignDescription.length >= 255) {
             return errorController(req, res, "Campaign description is too long")
         }
-        const storage = multer.diskStorage({
-            destination: (req, file, callBack) => {
-                callBack(null, 'uploads')
-            },
-            filename: (req, file, callBack) => {
-                callBack(null, `${file.originalname}`)
-            }
-        })
-        let upload = multer({dest:'uploads/'})
+        
         
 
         const campaign = await campaignService.create(req.body); //gelen requeste göre user yarat
@@ -50,6 +42,9 @@ class CampaignService {
         const campaign = await campaignService.delete(req.params.id);
         console.log("deleted campaign");
         res.json(campaign);
+    }
+    async getImages(req, res) {
+        
     }
 }
 
