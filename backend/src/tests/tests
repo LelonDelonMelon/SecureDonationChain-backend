@@ -1,0 +1,115 @@
+const request = require('supertest');
+
+jest.setTimeout(60000);
+
+describe('Test the users get endpoint', () => {
+  test('It should return a 200 status code and return if the body contains the user', async () => {
+    const response = await request('https://bitirme2-production.up.railway.app').get('/api/user');
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            fullName: expect.any(String),
+            email: expect.any(String),
+            password: expect.any(String),
+          }),
+        ])
+      );
+  });
+});
+
+describe('Test the users post endpoint', () => {
+    test('It should return a 200 status code and return if the body contains the user data', async () => {
+      const response = await request('https://bitirme2-production.up.railway.app')
+        .post('/api/user')
+        .send({  // Send the request body as an argument to the .send() method
+          fullName: 'John Doedasdasasdasd',
+          email: 'john@exa1212sdsda',
+          password: 'passwodr1231',
+        });
+      expect(response.statusCode).toBe(200);
+      expect(response.body).toEqual(
+        expect.objectContaining({
+          fullName: expect.any(String),
+          email: expect.any(String),
+          password: expect.any(String),
+        })
+      );
+    });
+  });
+
+  describe('Test the users post endpoint with same input', () => {
+    test('It should return a 500 status code and return the error message', async () => {
+      try {
+        const response = await request('https://bitirme2-production.up.railway.app')
+          .post('/api/user')
+          .send({  // Send the request body as an argument to the .send() method
+            fullName: 'John Dssssoed',
+            email: 'john@exsssdsample.comdsadasasda',
+            password: 'passddsdsddsword',
+          });
+      } catch(err) {
+        expect(err.status).toBe(500);
+        expect(err.response.body).toEqual(
+          expect.objectContaining({
+            message: 'User Already Exists',
+          })
+        );
+      }
+    });
+  });
+  
+
+  describe('Test the users update endpoint', () => {
+    test('It should return a 200 status code and return if the body contains the updated user data', async () => {
+      const response = await request('https://bitirme2-production.up.railway.app')
+        .put('/api/user/634e513373768dd3a902a810')  // Use the .put() method to send an UPDATE request
+        .send({  // Send the request body as an argument to the .send() method
+          fullName: 'Johnsddddddd Doe',
+          email: 'john@example.comaaaasdasasaa',
+          password: 'passwoaaaaard',
+        });
+      expect(response.statusCode).toBe(200);
+      expect(response.body).toEqual(
+        expect.objectContaining({
+          fullName: expect.any(String),
+          email: expect.any(String),
+          password: expect.any(String),
+        })
+      );
+    });
+  });
+  
+  describe('Test the users delete endpoint', () => {
+    test('It should delete the specified user and return a 200 status code', async () => {
+     
+      const response = await request('https://bitirme2-production.up.railway.app')
+        .delete(`/api/user/637a26c7c97e9cef354be403`);
+      expect(response.statusCode).toBe(200);
+      expect.objectContaining({
+        statusMessage: 'Deleted user with id: 634e513373768dd3a902a810',
+      })
+    });
+  });
+  
+  
+//WALLETS
+
+  describe('Test the wallet get endpoint', () => {
+    test('It should return a 200 status code and return if the body contains the wallet', async () => {
+      const response = await request('https://bitirme2-production.up.railway.app').get('/api/wallet');
+      expect(response.statusCode).toBe(200);
+      expect(response.body).toEqual(
+        expect.arrayContaining([
+          {
+            _id: expect.any(String),
+            __v: expect.any(Number),
+            walletAddress: expect.any(String),
+            createdAt: expect.any(String),
+            updatedAt: expect.any(String),
+          },
+        ])
+      );
+    });
+  });
+  
