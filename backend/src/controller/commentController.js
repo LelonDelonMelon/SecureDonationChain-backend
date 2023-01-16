@@ -1,6 +1,6 @@
 const commentService = require('../services/comment');
 const errorController = require('../controller/errorController');
-
+const campaignRating = require('../controller/campaignRating')
 class Comment{
     async list(req, res) {
 
@@ -18,7 +18,11 @@ class Comment{
         {
             return errorController(req,res,"Comment is too long")
         }
-
+        if(req.body.campaignRating > 5)
+        {
+            return errorController(req,res,"Rating value is greater than 5")
+        }
+        
         const comment = await commentService.create(req.body)
         console.log("Creating comment", comment);
         return res.json(comment);

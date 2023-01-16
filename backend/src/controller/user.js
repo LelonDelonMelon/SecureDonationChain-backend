@@ -4,7 +4,6 @@ const userService = require('../services/user');
 const errorController = require('./errorController');
 
 
-
 class User {
 
     async list(req, res) {
@@ -13,8 +12,8 @@ class User {
             users = await userService.list(req.query);
             return res.json(users);
 
-         }
-         // if (req.body) {
+        }
+        // if (req.body) {
 
         //     users = await userService.list(req.body);
         //     console.log("req is ", req.body)
@@ -37,7 +36,7 @@ class User {
         if (filter.password === "") {
             return errorController(req, res, "Password cannot be empty")
         }
-
+      
         const user = await userService.create(req.body); //gelen requeste göre user yarat
         return res.json(user);
     }

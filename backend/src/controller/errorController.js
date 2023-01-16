@@ -30,6 +30,11 @@ module.exports = (req, res, errIdentifier) => {
     if(errIdentifier ==='Comment is too long'){
         res.status(500).send('Comment is Too Long')
     }
+    if(errIdentifier ==='Rating value is greater than 5'){
+        res.status(500).send('Rating Value Is Greater Than 5')
+    }
+
+    //Rating value is greater than 5
     
     //res.status(500).send('Error Occured');
 }

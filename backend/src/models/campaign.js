@@ -14,9 +14,19 @@ const campaignSchema = new mongo.Schema({
         type: String
     },
     campaignPicture: {
-        
+
+        data: Buffer,
         contentType: String
+        
+    },
+    campaignRating: {
+        type: Number,
+        default:1 ,
+    },
+    numOfRatings: {
+        type: Number,
+        default: 0,
     }
 
-}, { timestamps: true })
+}, { timestamps: true, bufferCommands: true,toObject: { getters: true }, toJSON: { getters: true } })
 module.exports = new mongo.model('Campaign', campaignSchema);

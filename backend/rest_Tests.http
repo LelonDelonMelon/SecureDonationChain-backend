@@ -9,9 +9,9 @@ post http://localhost:3000/api/user
 Content-Type: application/json
 
 {
-    "fullName": "MERHABA MERT",
-    "email":"EBE",
-    "password": "askdkasdjj123h12h3hbasdv"
+    "fullName": "Hash deneme4",
+    "email":"bcry22p3t@gmail.com",
+    "password": "1232123123"
 }
 ###
 get http://localhost:3000/api/comment?content=Test
@@ -42,10 +42,10 @@ Content-Type: application/json
 ###
 
 get http://localhost:3000/api/wallet
-
+63c2f5e9c5d3de9a01abda62
 ###
 
-get http://localhost:3000/api/campaign
+get http://localhost:3000/api/campaign?_id=63c2f5e9c5d3de9a01abda62
 
 ###
 
@@ -53,10 +53,23 @@ post http://localhost:3000/api/campaign
 Content-Type: application/json
 
 {
-    "campaignName": "Example Campaigng",
-    "ownerAddress": "0x12381273712673gfdd6",
-    "campaignDescription": "Lorem ipsum dolor sit amet, consect, arcu dui molli tincidunt mauris eratLorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat ",
-    "campaignGoalAmount":" 123142"
+    "campaignName": "Example Campai1g",
+    "ownerAddress": "0x123812737126734fdd6",
+    "campaignDescription": "Lorem dolor it , consect, arcu dui molli tincidunt mauris eratLorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat, mi a aliquam vestibulum, arcu dui molli tincidunt mauris erat ",
+    "campaignGoalAmount":" 123142",
+    "campaignRating": "1"
+}
+###
+post http://localhost:3000/api/campaign
+Content-Type: application/json
+
+{
+    "campaignName": "Example Campai1g",
+    "ownerAddress": "0x123812737126734fdd6",
+    "campaignDescription": "Lorem  elit. In consequ ",
+    "campaignGoalAmount":" 123142",
+    "campaignRating": "1",
+    "numOfRatings":3
 }
 ###
 
