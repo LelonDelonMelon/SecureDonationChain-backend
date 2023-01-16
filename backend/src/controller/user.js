@@ -30,15 +30,26 @@ class User {
     async create(req, res) {
         //console.log("req.body is : ",req.body);
         const filter = req.body;
-        if (await userService.findOne(filter)) {
-            return errorController(req, res, "User already exists");
+       try {
+        if (req.body._id.match(/^[0-9a-fA-F]{27}$/)) {
+            // Yes, it's a valid ObjectId, proceed with `findById` call.
+            if (await userService.findOne(filter)) {
+                return errorController(req, res, "User already exists");
+            }
         }
+       
         if (filter.password === "") {
             return errorController(req, res, "Password cannot be empty")
         }
       
         const user = await userService.create(req.body); //gelen requeste göre user yarat
         return res.json(user);
+       } catch (error) {
+        if(error.code ===11000)
+        {
+            console.log("duplicate error");
+        }
+       }
     }
     async update(req, res) {
 

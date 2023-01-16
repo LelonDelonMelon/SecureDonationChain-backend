@@ -51,6 +51,8 @@ app.use(errorController)
 
 
 
-app.listen(process.env.APP_PORT,()=> {
+app.listen(process.env.APP_PORT || 3001,()=> {
     console.log("Listening at port", process.env.APP_PORT);
 });
+
+module.exports = app
